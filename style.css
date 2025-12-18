@@ -1,0 +1,90 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo com gradiente animado */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #1e3c72, #2a5298, #6a11cb);
+    background-size: 600% 600%;
+    animation: fundoAnimado 10s ease infinite;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Animação do fundo */
+@keyframes fundoAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Card principal */
+.card {
+    width: 280px;
+    height: 320px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+
+    /* Animação de entrada */
+    animation: subir 1.5s ease forwards;
+
+    /* Transições suaves */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Animação inicial */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover com efeito 3D */
+.card:hover {
+    transform: scale(1.05) rotateX(5deg);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+/* Textos */
+.card h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.card p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.card span {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Texto muda no hover */
+.card:hover p {
+    content: "";
+    color: #ffd700;
+}
